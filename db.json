@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": "2",
+      "name": "printer",
+      "price": "900",
+      "quantity": 450,
+      "selected": false,
+      "available": true
+    },
+    {
+      "id": 3,
+      "name": "azerty",
+      "price": "110",
+      "quantity": "1",
+      "selected": true,
+      "available": true
+    },
+    {
+      "name": "aaa",
+      "price": 300,
+      "quantity": "154",
+      "selected": false,
+      "available": true,
+      "id": 4
+    },
+    {
+      "name": "p",
+      "price": "01",
+      "quantity": "1",
+      "selected": true,
+      "available": true,
+      "id": 5
+    }
+  ]
+}
