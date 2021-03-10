@@ -1,3 +1,3 @@
-# Products
+# Products: FrontEnd
 
-aAngular 11, json server 
+Angular 11, component-interaction, Sub/Pub avec Subject, json server 
