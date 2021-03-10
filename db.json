@@ -1,36 +1,28 @@
 {
   "products": [
     {
-      "id": "2",
-      "name": "printer",
-      "price": "900",
-      "quantity": 450,
-      "selected": false,
-      "available": true
-    },
-    {
-      "id": 3,
-      "name": "azerty",
-      "price": "110",
-      "quantity": "1",
-      "selected": true,
-      "available": true
-    },
-    {
-      "name": "aaa",
+      "id": 4,
+      "name": "aaab",
       "price": 300,
       "quantity": "154",
       "selected": false,
-      "available": true,
-      "id": 4
+      "available": true
     },
     {
-      "name": "p",
+      "id": 5,
+      "name": "ooo",
       "price": "01",
       "quantity": "1",
       "selected": true,
+      "available": true
+    },
+    {
+      "name": "f",
+      "price": 0,
+      "quantity": 0,
+      "selected": true,
       "available": true,
-      "id": 5
+      "id": 6
     }
   ]
 }
