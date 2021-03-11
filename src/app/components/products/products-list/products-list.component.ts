@@ -11,14 +11,17 @@ import { ActionEvent, AppDataState, DataStateEnum, ProductActionsTypes } from 's
 export class ProductsListComponent implements OnInit {
   
    @Input()productsInput$:Observable<AppDataState<Product[]>> |null=null;
-   @Output() productsEventEmitter:EventEmitter<ActionEvent> = new EventEmitter<ActionEvent>();
+   //@Output() productsEventEmitter:EventEmitter<ActionEvent> = new EventEmitter<ActionEvent>();
    readonly DataStateEnum=DataStateEnum;
   constructor() { }
 
   ngOnInit() {
+  
   }
+  /*
   onSelect(p:Product)
   {
+
     this.productsEventEmitter.emit({
            type:ProductActionsTypes.SELECT_PRODUCT,payload:p})
   }
@@ -39,5 +42,5 @@ export class ProductsListComponent implements OnInit {
   {
     this.productsEventEmitter.emit($event);
     
-  }
+  }*/
 }

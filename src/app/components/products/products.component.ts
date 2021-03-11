@@ -5,6 +5,7 @@ import { Product } from 'src/app/model/product.model';
 import { ProductsService } from 'src/app/services/products.service';
 import {catchError, map, startWith} from 'rxjs/operators';
 import { ActionEvent, AppDataState, DataStateEnum, ProductActionsTypes } from 'src/app/state/product.state';
+import { EventDriverService } from 'src/app/state/event.driver.service';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -12,13 +13,34 @@ import { ActionEvent, AppDataState, DataStateEnum, ProductActionsTypes } from 's
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private productsService:ProductsService, private router:Router) { }
+  constructor(private productsService:ProductsService, private router:Router,
+               private eventDriverService:EventDriverService) { }
    //products:Product[] |null=null;
    //declare products as observable directly, add $ antotion
    //products$:Observable<Product[]> |null=null;
    products$:Observable<AppDataState<Product[]>> |null=null;
    readonly DataStateEnum=DataStateEnum;
+
   ngOnInit() {
+    // when the eventdriverservice start, listen to broker sourceEventSubjectObservable
+    this.eventDriverService.sourceEventSubjectObservable.subscribe((Actionevent:ActionEvent)=>
+    {
+      this.onActionEvent_navbar(Actionevent);
+      this.onActionEvent(Actionevent);
+      // or we can also 
+      /*switch(Actionevent.type)
+      {
+        case ProductActionsTypes.GET_ALL_PRODUCTS: this.onGetAllProducts();break;
+        case ProductActionsTypes.GET_SELECTED_PRODUCTS: this.onGetSelectedProducts();break;
+        case ProductActionsTypes.GET_AVAILABLE_PRODUCTS: this.onGetAvailableProducts();break;
+        case ProductActionsTypes.SEARCH_PRODUCTS: this.onSearch(Actionevent.payload);break;
+        case ProductActionsTypes.NEW_PRODUCT: this.onNewProduct();break;
+        case ProductActionsTypes.SELECT_PRODUCT: this.onSelect(Actionevent.payload);break;
+        case ProductActionsTypes.EDIT_PRODUCT: this.onEdit(Actionevent.payload);break;
+        case ProductActionsTypes.DELETE_PRODUCT: this.onDelete(Actionevent.payload);break;
+      }
+     */
+    });
   }
   
   onGetAllProducts() {

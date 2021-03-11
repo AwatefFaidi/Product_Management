@@ -15,8 +15,7 @@
           <th>ID</th><th>Name</th><th>Price</th><th>Quantity</th><th>Selected</th><th>Available</th>
         </tr>
         <app-product-item [product]="p" 
-        (EventEmitter) ="onActionEvent($event)"
-         *ngFor="let p of result.data" style="display: contents">
+                 *ngFor="let p of result.data" style="display: contents">
         </app-product-item>
         <!-- products$ is an observable, so we add pipe (subscribe to return data) -->
         

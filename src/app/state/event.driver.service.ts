@@ -5,9 +5,12 @@ import { ActionEvent } from '../state/product.state';
 @Injectable({
   providedIn: 'root'
 })
-export class EventdriverService {
+export class EventDriverService {
   sourceEventSubject:Subject<ActionEvent>=new Subject<ActionEvent>();
   sourceEventSubjectObservable=this.sourceEventSubject.asObservable();
+
+  sourceEventSubject2:Subject<ActionEvent>=new Subject<ActionEvent>();
+  sourceEventSubjectObservable2=this.sourceEventSubject.asObservable();
 
   constructor() { }
   // when we call this method, we publish  ActionEvent as (msg) subject

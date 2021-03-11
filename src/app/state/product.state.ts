@@ -8,6 +8,8 @@ export enum ProductActionsTypes{
   SELECT_PRODUCT="[Product] Select product",
   EDIT_PRODUCT="[Product] Edit product",
   DELETE_PRODUCT="[Product] Delete product",
+  PRODUCT_ADDED="[Product] product added",
+  PRODUCT_UPDATED="[Product] product updated",
 
 }
 // we declare this interface as, some event nedd some date example search event need a keyword as value 
